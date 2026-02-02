@@ -21,7 +21,7 @@ data class Category(
     @Column(length = 255)
     val imageUrl: String? = null,
 
-    @JsonIgnore  // Evită circular reference în JSON
+    @JsonIgnore
     @OneToMany(mappedBy = "category", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val products: MutableList<Product> = mutableListOf(),
 
