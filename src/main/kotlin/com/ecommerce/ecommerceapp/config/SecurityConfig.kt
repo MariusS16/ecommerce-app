@@ -77,6 +77,9 @@ class SecurityConfig(
                     .requestMatchers(HttpMethod.POST, "/api/suppliers/**").hasRole("ADMIN")
                     .requestMatchers(HttpMethod.PUT, "/api/suppliers/**").hasRole("ADMIN")
                     .requestMatchers(HttpMethod.DELETE, "/api/suppliers/**").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.GET, "/api/cart/all").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.PUT, "/api/orders/*/status").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.GET, "/api/orders/all").hasRole("ADMIN")
 
                     // All other routes require authentication (any logged-in user)
                     .anyRequest().authenticated()
