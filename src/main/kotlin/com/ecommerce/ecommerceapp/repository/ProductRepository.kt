@@ -35,4 +35,8 @@ interface ProductRepository : JpaRepository<Product, Long> {
     // Query custom: Produse populare (in stoc + active)
     @Query("SELECT p FROM Product p WHERE p.isActive = true AND p.stock > 0 ORDER BY p.createdAt DESC")
     fun findPopularProducts(): List<Product>
+
+    // Search products by name (case-insensitive, partial match)
+    @Query("SELECT p FROM Product p WHERE LOWER(p.name) LIKE LOWER(CONCAT('%', :searchTerm, '%')) AND p.isActive = true")
+    fun searchByName(@Param("searchTerm") searchTerm: String): List<Product>
 }

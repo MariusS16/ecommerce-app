@@ -43,6 +43,14 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+
+    // JSON processing (pentru parsing răspunsuri AI)
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    // Kotlin Coroutines (pentru Gemini SDK)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
 }
 
 kotlin {

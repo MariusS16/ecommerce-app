@@ -27,4 +27,10 @@ interface ExternalRecommendationRepository : JpaRepository<ExternalRecommendatio
 
     // Șterge cache-uri expirate (cleanup job)
     fun deleteByExpiresAtBefore(expiresAt: LocalDateTime)
+
+    // Find recommendations that are still valid (not expired)
+    fun findBySearchQueryAndExpiresAtAfter(
+        searchQuery: String,
+        currentTime: LocalDateTime
+    ): List<ExternalRecommendation>
 }
