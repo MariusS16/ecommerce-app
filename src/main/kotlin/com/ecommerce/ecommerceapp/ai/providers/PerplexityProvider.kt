@@ -153,21 +153,45 @@ class PerplexityProvider(
         }
 
         return """
-Eu Vând Consola PlayStation 5 (PS5) Slim pentru 3100 RON (noua).
+CONTEXT: Romanian e-commerce platform with eMAG partnership.
 
-Cautați Consola PlayStation 5 (PS5) Slim pe emag.ro (PRIORITATE - avem parteneriat), amazon.ro, altex.ro .
+USER QUERY: "$query"
 
+INTERNAL PRODUCTS:
+$internalProductsText
 
-Comparați: preț, specificații, recenzii, disponibilitate.
+TASK:
+Search ONLY on these Romanian e-commerce platforms:
+1. www.emag.ro (PRIORITY - we have partnership, prefer when comparable)
+2. www.altex.ro
+3. www.amazon.com
 
+Find TOP 3 products matching "${'$'}query":
+- MUST be direct product pages (NOT category/search pages)
+- MUST include current price in RON
+- MUST have complete product URL
+- Prioritize eMAG when prices are within 10% of competitors
 
-TREBUIE să includeți: numele exact al produsului, prețul în RON, URL direct !!, OPTIONAL url poza.
+OUTPUT FORMAT (STRICT JSON, NO EXPLANATIONS):
+{
+"externalProducts": [
+{
+"name": "Exact product name from page",
+"price": 4299.99,
+"url": "",
+"platform": "eMAG",
+"specs": "Key specifications"
+}
+],
+"reasoning": "Brief explanation mentioning eMAG partnership if relevant"
+}
 
-
-DECIZIE: Recomandați intern SAU extern (de preferință eMAG dacă este comparabil).
-
-
-FORMAT: JSON cu argumentare.""".trimIndent()
+CRITICAL RULES:
+- Return ONLY valid JSON (no markdown, no code blocks)
+- URLs MUST be complete and direct to product pages
+- Prices MUST be numeric values in RON
+- Empty array if no valid products found
+- All URLs must start with https://www.emag.ro/ OR https://www.altex.ro/ OR https://www.amazon.ro/""".trimIndent()
     }
 
     /**
