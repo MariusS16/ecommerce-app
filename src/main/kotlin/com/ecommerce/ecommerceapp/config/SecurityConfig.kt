@@ -27,6 +27,16 @@ class SecurityConfig(
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
         http
+            .cors { cors ->
+                cors.configurationSource { _ ->
+                    val config = org.springframework.web.cors.CorsConfiguration()
+                    config.allowedOrigins = listOf("http://localhost:5173")
+                    config.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                    config.allowedHeaders = listOf("*")
+                    config.allowCredentials = true
+                    config
+                }
+            }
             // Disable CSRF - not needed for stateless REST API
             .csrf { it.disable() }
 
@@ -63,7 +73,7 @@ class SecurityConfig(
                 requests
                     // PUBLIC routes - anyone can access without token
                     .requestMatchers("/api/auth/**").permitAll()
-//                    .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/suppliers/**").permitAll()
 

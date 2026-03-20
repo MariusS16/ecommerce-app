@@ -1,0 +1,44 @@
+.stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9FAFB;
+    border: none;
+    color: #374151;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: background-color 0.15s;
+    flex-shrink: 0;
+}
+
+.btn:hover:not(:disabled) { background-color: #F3F4F6; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Separator între buton și număr */
+.btnLeft  { border-right: 1.5px solid #E5E7EB; }
+.btnRight { border-left:  1.5px solid #E5E7EB; }
+
+.value {
+    font-weight: 600;
+    color: #111827;
+    text-align: center;
+    flex-shrink: 0;
+    font-family: inherit;
+}
+
+/* ── Mărimi ── */
+.sm .btn   { width: 28px; height: 28px; font-size: 14px; }
+.sm .value { width: 36px; font-size: 0.8rem; }
+
+.md .btn   { width: 36px; height: 36px; font-size: 18px; }
+.md .value { width: 44px; font-size: 0.875rem; }

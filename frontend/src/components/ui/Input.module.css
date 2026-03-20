@@ -1,0 +1,82 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.required {
+    color: #EF4444;
+    margin-left: 2px;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-family: inherit;
+    background-color: #F9FAFB;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.input::placeholder {
+    color: #9CA3AF;
+}
+
+.input:focus {
+    border-color: #6366F1;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Cu icon în stânga → padding extra */
+.withIcon {
+    padding-left: 2.4rem;
+}
+
+/* Stare eroare */
+.inputError {
+    border-color: #EF4444;
+    background-color: #FEF2F2;
+}
+
+.inputError:focus {
+    border-color: #EF4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.errorMessage {
+    font-size: 0.78rem;
+    color: #EF4444;
+}
+
+.helperText {
+    font-size: 0.78rem;
+    color: #6B7280;
+}

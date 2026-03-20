@@ -1,0 +1,82 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, opacity 0.15s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Mărimi ── */
+.sm { padding: 6px 12px; font-size: 0.8rem; }
+.md { padding: 10px 18px; font-size: 0.875rem; }
+.lg { padding: 12px 24px; font-size: 1rem; }
+
+/* ── Variante ── */
+.primary {
+    background-color: #6366F1;
+    color: white;
+}
+.primary:hover:not(:disabled) { background-color: #4F46E5; }
+
+.outline {
+    background-color: transparent;
+    color: #6366F1;
+    border: 1.5px solid #6366F1;
+}
+.outline:hover:not(:disabled) { background-color: #EEF2FF; }
+
+.ghost {
+    background-color: #F3F4F6;
+    color: #374151;
+}
+.ghost:hover:not(:disabled) { background-color: #E5E7EB; }
+
+.danger {
+    background-color: #EF4444;
+    color: white;
+}
+.danger:hover:not(:disabled) { background-color: #DC2626; }
+
+.success {
+    background-color: #10B981;
+    color: white;
+}
+.success:hover:not(:disabled) { background-color: #059669; }
+
+/* ── Full width ── */
+.fullWidth { width: 100%; }
+
+/* ── Loading spinner ── */
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+.spinnerDark {
+    border-color: rgba(99,102,241,0.3);
+    border-top-color: #6366F1;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

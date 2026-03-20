@@ -1,0 +1,571 @@
+/* HERO — full screen*/
+.hero {
+    position: relative;
+    min-height: 101vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1761195696590-3490ea770aa1?w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.2);
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+    rgba(15,23,42,0.95) 0%,
+    rgba(79,70,229,0.7) 50%,
+    rgba(15,23,42,0.9) 100%
+    );
+}
+
+/* Blob-uri animate */
+.heroBlob1 {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: rgba(99,102,241,0.15);
+    border-radius: 50%;
+    filter: blur(80px);
+    top: 10%; left: 5%;
+    pointer-events: none;
+}
+
+.heroBlob2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: rgba(16,185,129,0.1);
+    border-radius: 50%;
+    filter: blur(80px);
+    bottom: 10%; right: 5%;
+    pointer-events: none;
+}
+
+/* Grid interior hero */
+.heroInner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 80px 0 40px;
+}
+
+/* ── Stânga ── */
+.heroLeft {}
+
+.heroBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6ee7b7;
+    margin-bottom: 24px;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+}
+
+.heroTitleGradient {
+    display: block;
+    background: linear-gradient(90deg, #a5b4fc, #67e8f9, #6ee7b7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroSubtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.heroSubtitle span {
+    color: #6ee7b7;
+    font-weight: 600;
+}
+
+/* Search */
+.heroSearchWrap {
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 40px rgba(99,102,241,0.2);
+}
+
+.heroSearchInput {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    color: white;
+    font-family: inherit;
+}
+
+.heroSearchInput::placeholder { color: rgba(255,255,255,0.3); }
+
+.heroSearchBtn {
+    padding: 11px 22px;
+    background: #6366F1;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s;
+}
+
+.heroSearchBtn:hover { background: #4F46E5; }
+
+.heroHint {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 48px;
+}
+
+.heroHint span { color: #a5b4fc; font-weight: 500; }
+
+/* Stats inline în hero */
+.heroStats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.heroStatItem {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.heroStatIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    color: #6ee7b7;
+}
+
+.heroStatValue {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.heroStatValue span { color: #a5b4fc; }
+.heroStatLabel { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 2px; font-weight: 500; }
+
+/* ── Dreapta — floating card ── */
+.heroRight {
+    display: flex;
+    justify-content: center;
+}
+
+.floatingCard {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.floatingCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.floatingCardIcon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, #6366F1, #10B981);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floatingCardTitle { font-size: 0.95rem; font-weight: 700; color: white; }
+.floatingCardSub   { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+.floatingProductsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.floatingProduct {
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.floatingProduct:hover { transform: scale(1.03); }
+
+.floatingProductImg {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    background: #F3F4F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floatingProductBody { padding: 8px; }
+.floatingProductName  { font-size: 0.7rem; font-weight: 600; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.floatingProductPrice { font-size: 0.75rem; font-weight: 700; color: #6366F1; }
+
+/* Badge "Top Oferte" plutitor */
+.topOferteBadge {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 20px rgba(16,185,129,0.4);
+    z-index: 10;
+}
+
+.floatingCardRelative { position: relative; width: 100%; max-width: 380px; }
+
+/* Wave divider */
+.waveDivider {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+}
+
+/* ══════════════════════════════
+   SECTIONS
+══════════════════════════════ */
+.section { padding: 64px 40px; }
+.sectionGray  { background: #F8FAFC; }
+.sectionWhite { background: white; }
+
+.sectionHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sectionLabel {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #6366F1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.sectionTitle { font-size: 1.6rem; font-weight: 800; color: #111827; }
+
+.seeAll {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6366F1;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    transition: color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.seeAll:hover { color: #4F46E5; }
+
+/* ══════════════════════════════
+   CATEGORII cu imagini
+══════════════════════════════ */
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catCard {
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    height: 160px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.catCard:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
+
+.catCardImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.catCard:hover .catCardImg { transform: scale(1.08); }
+
+.catCardOverlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.75;
+    transition: opacity 0.25s;
+}
+
+.catCard:hover .catCardOverlay { opacity: 0.85; }
+
+.catCardContent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+}
+
+.catCardIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+.catCardName {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ══════════════════════════════
+   CAROUSEL
+══════════════════════════════ */
+.carouselOuter {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carouselWrapper { position: relative; }
+
+.carouselTrack {
+    display: flex;
+    gap: 14px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.carouselArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1.5px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    color: #374151;
+}
+
+.carouselArrow:hover {
+    background: #6366F1;
+    border-color: #6366F1;
+    color: white;
+}
+
+.carouselArrowLeft  { left: -20px; }
+.carouselArrowRight { right: -20px; }
+
+/* Card produs în carousel — mai îngust */
+.prodCardWrap {
+    flex-shrink: 0;
+    width: calc(20% - 11.2px);  /* 5 carduri vizibile */
+}
+
+/* Skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 14px;
+    height: 280px;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ══════════════════════════════
+   AI SECTION
+══════════════════════════════ */
+.aiSection {
+    position: relative;
+    padding: 80px 40px;
+    overflow: hidden;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+}
+
+.aiBg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.2);
+}
+
+.aiOverlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg,
+    rgba(15,23,42,0.95) 0%,
+    rgba(79,70,229,0.65) 50%,
+    rgba(15,23,42,0.95) 100%
+    );
+}
+
+.aiInner {
+    position: relative; z-index: 2;
+    width: 100%; max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.aiLabel {
+    font-size: 0.7rem; font-weight: 700; color: #818CF8;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+}
+
+.aiTitle {
+    font-size: 2rem; font-weight: 800; color: white;
+    margin-bottom: 14px; line-height: 1.2;
+}
+
+.aiTitle span { color: #a5b4fc; }
+
+.aiDesc {
+    font-size: 0.9rem; color: #94a3b8;
+    line-height: 1.7; margin-bottom: 28px;
+}
+
+.aiBtn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px; background: #6366F1; color: white;
+    border: none; border-radius: 12px; font-size: 0.875rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+    transition: background 0.15s;
+}
+
+.aiBtn:hover { background: #4F46E5; }
+
+.aiDemoCard {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 24px;
+}
+
+.aiQuery {
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.25);
+    border-radius: 10px; padding: 12px 16px;
+    margin-bottom: 16px; font-size: 0.8rem; color: #a5b4fc;
+    display: flex; align-items: center; gap: 8px;
+}
+
+.aiResult {
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px; padding: 12px;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 12px;
+}
+
+.aiResultIcon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+}
+
+.aiResultName  { font-size: 0.75rem; font-weight: 600; color: white; margin-bottom: 2px; }
+.aiResultPrice { font-size: 0.7rem; color: #94a3b8; }
+.aiResultSave  { font-weight: 600; }
+
+.aiBadge {
+    margin-left: auto; padding: 2px 8px;
+    border-radius: 6px; font-size: 0.65rem; font-weight: 700; flex-shrink: 0;
+}

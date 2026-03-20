@@ -1,0 +1,129 @@
+.footer {
+    background-color: #111827;
+    margin-top: auto;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 1.5rem;
+}
+
+/* ── Grid cu 4 coloane ── */
+.footerGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #1F2937;
+}
+
+/* ── Coloana brand ── */
+.brandCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.logoShop {
+    color: #818CF8;
+}
+
+.logoAdvisor {
+    color: #34D399;
+}
+
+.brandDescription {
+    font-size: 0.875rem;
+    color: #9CA3AF;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    max-width: 240px;
+}
+
+/* ── Social media iconițe ── */
+.socialLinks {
+    display: flex;
+    gap: 10px;
+}
+
+.socialButton {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #9CA3AF;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+    text-decoration: none;
+}
+
+.socialButton:hover {
+    background-color: #374151;
+    border-color: #4B5563;
+    color: #F9FAFB;
+}
+
+/* ── Coloane linkuri ── */
+.linkCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.colTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #F9FAFB;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footerLink {
+    font-size: 0.875rem;
+    color: #9CA3AF;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    text-align: left;
+    padding: 0;
+    transition: color 0.15s;
+    width: fit-content;
+}
+
+.footerLink:hover {
+    color: #F9FAFB;
+}
+
+/* ── Rândul de jos ── */
+.footerBottom {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #6B7280;
+}

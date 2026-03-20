@@ -1,0 +1,308 @@
+/* ── Bara principală ── */
+.navbar {
+    position: sticky;        /* Rămâne vizibil când scrollezi */
+    top: 0;                  /* Lipit de partea de sus */
+    z-index: 100;            /* Peste orice alt element */
+    background-color: #ffffff;
+    border-bottom: 1px solid #E5E7EB;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Conținutul interior — limitat la o lățime maximă ── */
+.navContent {
+    max-width: 1200px;       /* Site-ul nu se întinde la infinit pe ecrane mari */
+    margin: 0 auto;          /* Centrat orizontal */
+    padding: 0 1.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;     /* Elementele sunt aliniate vertical la mijloc */
+    justify-content: space-between;  /* Logo stânga, meniu dreapta */
+    gap: 1rem;
+}
+
+/* ── Logo ── */
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: -0.3px;
+}
+
+.logoShop {
+    color: #6366F1;
+}
+
+.logoAdvisor {
+    color: #10B981;
+}
+
+/* ── Search ── */
+.searchContainer {
+    flex: 1;
+    max-width: 460px;
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.4rem;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #F9FAFB;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.searchInput:focus {
+    border-color: #6366F1;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.searchInput::placeholder {
+    color: #9CA3AF;
+}
+
+/* ── Nav actions ── */
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    transition: background-color 0.15s;
+    white-space: nowrap;
+}
+
+.navButton:hover {
+    background-color: #F3F4F6;
+}
+
+/* ── Coș ── */
+.cartButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    background-color: #F3F4F6;
+    border: none;
+    font-family: inherit;
+    transition: background-color 0.15s;
+    position: relative;
+    white-space: nowrap;
+}
+
+.cartButton:hover {
+    background-color: #E5E7EB;
+}
+
+.cartBadge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: #6366F1;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Divider vertical ── */
+.divider {
+    width: 1px;
+    height: 28px;
+    background-color: #E5E7EB;
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+/* ── User menu ── */
+.userMenu {
+    position: relative;
+}
+
+.userButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    background-color: #F3F4F6;
+    border: none;
+    font-family: inherit;
+    transition: background-color 0.15s;
+}
+
+.userButton:hover {
+    background-color: #E5E7EB;
+}
+
+.userAvatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #6366F1;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.chevron {
+    color: #9CA3AF;
+    transition: transform 0.2s;
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+/* ── Dropdown ── */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 200;
+    overflow: hidden;
+    animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownHeader {
+    padding: 10px 16px 8px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.dropdownEmail {
+    font-size: 0.8rem;
+    color: #6B7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    color: #374151;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    transition: background-color 0.12s;
+}
+
+.dropdownItem:hover {
+    background-color: #F9FAFB;
+}
+
+.dropdownDivider {
+    height: 1px;
+    background-color: #F3F4F6;
+    margin: 2px 0;
+}
+
+.dropdownItemDanger {
+    color: #EF4444;
+}
+
+.dropdownItemDanger:hover {
+    background-color: #FEF2F2;
+}
+
+/* ── Butoane login/register (nelogat) ── */
+.loginButton {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    background: none;
+    border: 1px solid #E5E7EB;
+    font-family: inherit;
+    transition: background-color 0.15s;
+    white-space: nowrap;
+}
+
+.loginButton:hover {
+    background-color: #F3F4F6;
+}
+
+.registerButton {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    background-color: #6366F1;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    transition: background-color 0.15s;
+    white-space: nowrap;
+}
+
+.registerButton:hover {
+    background-color: #4F46E5;
+}
