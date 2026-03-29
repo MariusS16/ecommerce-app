@@ -1,7 +1,7 @@
 /* HERO — full screen*/
 .hero {
     position: relative;
-    min-height: 101vh;
+    min-height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +60,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    padding: 80px 0 40px;
+    padding: 30px 0 40px;
 }
 
 /* ── Stânga ── */

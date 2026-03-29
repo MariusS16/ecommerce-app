@@ -107,12 +107,14 @@ export default function Products() {
     // Aplicăm filtrele pe produsele deja încărcate (fără request suplimentar)
     const filteredProducts = allProducts
         .filter(p => {
+            // Fitru ptodus INACTIVE - nu le afișăm deloc
+            if (!p.isActive) return false
             // Filtru preț min
             if (minPrice && p.price < Number(minPrice)) return false
             // Filtru preț max
             if (maxPrice && p.price > Number(maxPrice)) return false
             // Filtru stoc
-            if (inStockOnly && p.stock === 0) return false
+            if (inStockOnly && p.stock === 0 ) return false
             return true
         })
         .sort((a, b) => {
@@ -150,6 +152,7 @@ export default function Products() {
         setInStockOnly(false)
         setVisibleCount(PRODUCTS_PER_PAGE)
         setSearchParams({})
+        window.scrollTo({ top: 0, behavior: 'smooth' })
         setLoading(true)
         axiosInstance.get('/api/products')
             .then(res => setAllProducts(res.data))
@@ -354,8 +357,6 @@ export default function Products() {
                                 >
                                     <ProductCard
                                         product={product}
-                                        isInWishlist={false}
-                                        onWishlistToggle={() => {}}
                                     />
                                 </motion.div>
                             ))

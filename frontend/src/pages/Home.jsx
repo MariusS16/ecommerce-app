@@ -164,7 +164,8 @@ export default function Home() {
 
     const handleSearch = (e) => {
         if (e.key === 'Enter' && searchTerm.trim()) {
-            navigate(`/products?search=${encodeURIComponent(searchTerm.trim())}`)
+            // navigate(`/products?search=${encodeURIComponent(searchTerm.trim())}`)
+            navigate(`/recommendations?query=${encodeURIComponent(searchTerm.trim())}&auto=true`)
         }
     }
 
@@ -475,8 +476,6 @@ export default function Home() {
                                     <div key={product.id} className={styles.prodCardWrap}>
                                         <ProductCard
                                             product={product}
-                                            isInWishlist={false}
-                                            onWishlistToggle={() => {}}
                                         />
                                     </div>
                                 ))

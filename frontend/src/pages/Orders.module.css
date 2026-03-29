@@ -1,0 +1,183 @@
+/* Badge statusuri */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.badgeDot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+.pending    { background: #FEF3C7; color: #92400E; }
+.confirmed  { background: #DBEAFE; color: #1E40AF; }
+.processing { background: #EDE9FE; color: #5B21B6; }
+.shipped    { background: #D1FAE5; color: #065F46; }
+.delivered  { background: #D1FAE5; color: #065F46; }
+.cancelled  { background: #FEE2E2; color: #991B1B; }
+
+/* Card comandă */
+.orderCard {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.orderCard:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    border-color: #C7D2FE;
+}
+
+.orderCardCancelled { opacity: 0.7; }
+
+/* Rândul de sus — info + status + total */
+.orderTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 10px;
+    gap: 16px;
+}
+
+.orderNum  { font-size: 0.9rem; font-weight: 800; color: #111827; margin-bottom: 4px; }
+.orderMeta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+.orderMeta span { display: flex; align-items: center; gap: 3px; }
+
+.orderRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.orderTotal { font-size: 1rem; font-weight: 800; color: #111827; }
+.orderTotalCancelled { color: #9CA3AF; }
+
+/* Rândul de jos — thumbnails + acțiuni */
+.orderBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 14px;
+    border-top: 1px solid #F9FAFB;
+}
+
+.orderThumbs { display: flex; gap: 6px; align-items: center; }
+
+.thumb {
+    width: 40px;
+    height: 40px;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+.thumbMore {
+    width: 40px;
+    height: 40px;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #6B7280;
+}
+
+.orderActions { display: flex; gap: 8px; align-items: center; }
+
+.btnCancel {
+    padding: 6px 14px;
+    background: none;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6B7280;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.btnCancel:hover { border-color: #EF4444; color: #EF4444; background: #FEF2F2; }
+
+.btnDetails {
+    padding: 6px 14px;
+    background: #6366F1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s;
+}
+
+.btnDetails:hover { background: #4F46E5; }
+
+/* Empty state */
+.emptyState {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.emptyIcon     { font-size: 3.5rem; margin-bottom: 16px; }
+.emptyTitle    { font-size: 1.1rem; font-weight: 800; color: #111827; margin-bottom: 8px; }
+.emptySubtitle { font-size: 0.875rem; color: #6B7280; margin-bottom: 24px; }
+.emptyBtn {
+    padding: 11px 28px;
+    background: #6366F1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Skeleton */
+.skeleton {
+    height: 110px;
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
