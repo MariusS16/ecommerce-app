@@ -51,6 +51,8 @@ dependencies {
     // Kotlin Coroutines (pentru Gemini SDK)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
+    implementation("org.springframework.boot:spring-boot-starter-mail")
+
 }
 
 kotlin {

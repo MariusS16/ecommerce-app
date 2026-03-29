@@ -23,7 +23,8 @@ class OrderService(
     private val orderRepository: OrderRepository,
     private val cartRepository: CartRepository,
     private val cartItemRepository: CartItemRepository,
-    private val orderMapper: OrderMapper
+    private val orderMapper: OrderMapper,
+    private val emailService: EmailService
 ) {
 
     // CREATE order (checkout from cart)
@@ -77,6 +78,8 @@ class OrderService(
 
         savedOrder.items.addAll(orderItems)
         orderRepository.save(savedOrder)
+
+        emailService.sendOrderConfirmationEmail(user, savedOrder)
 
         // CLEAR cart after successful order (FIXED!)
         val itemsToDelete = cartItemRepository.findByCart(cart)

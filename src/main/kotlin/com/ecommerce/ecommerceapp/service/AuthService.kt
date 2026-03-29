@@ -15,7 +15,8 @@ import java.time.LocalDateTime
 class AuthService(
     private val userRepository: UserRepository,
     private val passwordEncoder: PasswordEncoder,       // Injected from SecurityConfig @Bean
-    private val jwtTokenProvider: JwtTokenProvider
+    private val jwtTokenProvider: JwtTokenProvider,
+    private val emailService: EmailService
 ) {
 
     // REGISTER - Create a new user account
@@ -47,6 +48,9 @@ class AuthService(
 
         // Step 4: Save user to database
         val savedUser = userRepository.save(user)
+
+        // Step 5: Send welcome email (async)
+        emailService.sendWelcomeEmail(savedUser)
 
         // Step 5: Generate JWT token for the new user
         val token = jwtTokenProvider.generateToken(savedUser)
