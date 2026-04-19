@@ -15,12 +15,16 @@ const SORT_OPTIONS = [
 ]
 
 const CATEGORY_ICONS = {
-    'Telefoane':  '📱',
-    'Laptopuri':  '💻',
+    'Telefoane & Tablete':  '📱',
+    'PC & Laptop':  '💻',
     'Gaming':     '🎮',
     'Audio':      '🎧',
-    'Monitoare':  '🖥️',
-    'Foto-Video': '📷',
+    'Casa':  '🏡',
+    'Electrocasnice': '📺',
+    'Carti': '📚',
+    'Sport': '🎾',
+    'Fashion': '👓',
+    'Audio & Video': '📷',
 }
 
 export default function Products() {

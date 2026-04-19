@@ -5,7 +5,6 @@ import axiosInstance from '../api/axiosInstance'
 import ProductCard from '../components/ui/ProductCard'
 import styles from './Home.module.css'
 
-// ── Configurare categorii cu imagini Unsplash ──
 const CATEGORY_CONFIG = [
     {
         name: 'Telefoane',
@@ -22,7 +21,7 @@ const CATEGORY_CONFIG = [
     },
     {
         name: 'Laptopuri',
-        categoryId: 2,
+        categoryId: 4,
         image: 'https://images.unsplash.com/photo-1576057122708-9608db46b2f3?w=400&q=80',
         gradient: 'linear-gradient(135deg, rgba(59,130,246,0.75), rgba(6,182,212,0.75))',
         icon: (
@@ -35,23 +34,23 @@ const CATEGORY_CONFIG = [
     },
     {
         name: 'Gaming',
-        categoryId: 3,
+        categoryId: 5,
         image: 'https://images.unsplash.com/photo-1658671141384-c4317684a1a3?w=400&q=80',
         gradient: 'linear-gradient(135deg, rgba(239,68,68,0.75), rgba(249,115,22,0.75))',
         icon: (
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
-                 stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="6" y1="12" x2="18" y2="12"/>
-                <line x1="12" y1="6" x2="12" y2="18"/>
-                <circle cx="19" cy="9" r="1" fill="white"/>
-                <circle cx="19" cy="15" r="1" fill="white"/>
-                <rect x="2" y="6" width="20" height="12" rx="6"/>
+                 stroke="white" strokeWidth="1.5" strokeLinecap="round">
+                <line x1="6" y1="12" x2="10" y2="12"/>
+                <line x1="8" y1="10" x2="8" y2="14"/>
+                <line x1="15" y1="11" x2="15.01" y2="11"/>
+                <line x1="17" y1="13" x2="17.01" y2="13"/>
+                <path d="M6 5h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>
             </svg>
         ),
     },
     {
-        name: 'Audio',
-        categoryId: 4,
+        name: 'Audio & Video',
+        categoryId: 10,
         image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80',
         gradient: 'linear-gradient(135deg, rgba(234,179,8,0.75), rgba(249,115,22,0.75))',
         icon: (
@@ -63,9 +62,22 @@ const CATEGORY_CONFIG = [
         ),
     },
     {
-        name: 'Monitoare',
-        categoryId: 5,
-        image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80',
+        name: 'Electrocasnice',
+        categoryId: 6,
+        image: 'https://images.unsplash.com/photo-1586208958839-06c17cacdf08?q=80&w=965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        gradient: 'linear-gradient(135deg, rgba(99,102,241,0.75), rgba(139,92,246,0.75))',
+        icon: (
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                 stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+            </svg>
+        ),
+    },
+    {
+        name: 'Sport',
+        categoryId: 8,
+        image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         gradient: 'linear-gradient(135deg, rgba(16,185,129,0.75), rgba(5,150,105,0.75))',
         icon: (
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
@@ -73,19 +85,6 @@ const CATEGORY_CONFIG = [
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
                 <line x1="8" y1="21" x2="16" y2="21"/>
                 <line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-        ),
-    },
-    {
-        name: 'Foto-Video',
-        categoryId: 6,
-        image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&q=80',
-        gradient: 'linear-gradient(135deg, rgba(99,102,241,0.75), rgba(139,92,246,0.75))',
-        icon: (
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
-                 stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                <circle cx="12" cy="13" r="4"/>
             </svg>
         ),
     },
@@ -423,7 +422,7 @@ export default function Home() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: i * 0.08 }}
-                            onClick={() => navigate(`/products/category/${cat.categoryId}`)}
+                            onClick={() => navigate(`/products?categoryId=${cat.categoryId}`)}
                         >
                             <img src={cat.image} alt={cat.name} className={styles.catCardImg} />
                             <div className={styles.catCardOverlay} style={{ background: cat.gradient }} />

@@ -1,0 +1,78 @@
+.layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: calc(100vh - 64px);
+    background: #F8FAFC;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+    background: white;
+    border-right: 1px solid #E5E7EB;
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+}
+
+.sidebarHeader {
+    padding: 20px 16px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.sidebarTitle {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.sidebarSub {
+    font-size: 0.7rem;
+    color: #9CA3AF;
+    margin-top: 2px;
+}
+
+.nav { padding: 8px 0; }
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6B7280;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.navItem:hover { background: #F9FAFB; color: #111827; }
+
+.navItemActive {
+    background: #EEF2FF !important;
+    color: #6366F1 !important;
+    font-weight: 600 !important;
+}
+
+.navItemDanger { color: #EF4444; }
+.navItemDanger:hover { background: #FEF2F2; }
+
+.navDivider { height: 1px; background: #F3F4F6; margin: 6px 0; }
+
+.navBadge {
+    margin-left: auto;
+    background: #EF4444;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 10px;
+}
+
+/* ── Main ── */
+.main { padding: 28px 32px; min-width: 0; }

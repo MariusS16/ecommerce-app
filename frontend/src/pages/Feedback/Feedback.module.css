@@ -1,0 +1,456 @@
+.page {
+    min-height: 100vh;
+    background: #F8FAFC;
+    padding: 64px 24px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.headerIcon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #6366F1, #4F46E5);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+}
+
+.headerIcon svg {
+    width: 26px;
+    height: 26px;
+    stroke: white;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #6B7280;
+    margin: 0;
+}
+
+/* ── Form card ── */
+.form {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    border: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* ── Field ── */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.hint {
+    font-size: 0.82rem;
+    color: #9CA3AF;
+    margin: -4px 0 2px;
+}
+
+.required {
+    color: #EF4444;
+    margin-left: 2px;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+/* ── Select ── */
+.selectWrapper {
+    position: relative;
+}
+
+.select {
+    width: 100%;
+    padding: 13px 44px 13px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #111827;
+    background: white;
+    cursor: pointer;
+    appearance: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #6366F1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+}
+
+.selectChevron {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 18px;
+    height: 18px;
+    color: #9CA3AF;
+}
+
+.selectChevron svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ── Radio ── */
+.radioGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.radioLabel {
+    cursor: pointer;
+}
+
+.radioCard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.2s;
+    background: white;
+}
+
+.radioCard:hover {
+    border-color: #C7D2FE;
+    background: #F5F3FF;
+}
+
+.radioCardActive {
+    border-color: var(--accent, #6366F1);
+    background: color-mix(in srgb, var(--accent, #6366F1) 8%, white);
+    color: #111827;
+    font-weight: 600;
+}
+
+.radioIndicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.radioDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* ── Checkboxes (Features) ── */
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.featureCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+    position: relative;
+}
+
+.featureCard:hover {
+    border-color: #A7F3D0;
+    background: #F0FDF9;
+}
+
+.featureCardActive {
+    border-color: #059669;
+    background: #ECFDF5;
+}
+
+.featureIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #F3F4F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.featureIcon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #6B7280;
+}
+
+.featureIconActive {
+    background: #D1FAE5;
+}
+
+.featureIconActive svg {
+    stroke: #059669;
+}
+
+.featureLabel2 {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #374151;
+    flex: 1;
+}
+
+.featureCardActive .featureLabel2 {
+    color: #065F46;
+    font-weight: 600;
+}
+
+.featureCheck {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 2px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    margin-left: auto;
+}
+
+.featureCheck svg {
+    width: 12px;
+    height: 12px;
+    stroke: white;
+    display: none;
+}
+
+.featureCheckActive {
+    background: #059669;
+    border-color: #059669;
+}
+
+.featureCheckActive svg {
+    display: block;
+}
+
+/* ── Textarea ── */
+.textarea {
+    padding: 14px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #111827;
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    line-height: 1.6;
+    min-height: 130px;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #6366F1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+}
+
+.textarea::placeholder {
+    color: #9CA3AF;
+}
+
+.charRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.charCount {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    transition: color 0.2s;
+}
+
+.charCountWarn {
+    color: #F59E0B;
+}
+
+/* ── Error ── */
+.errorBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #DC2626;
+    font-weight: 500;
+}
+
+.errorIcon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* ── Submit ── */
+.submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 32px;
+    background: linear-gradient(135deg, #6366F1, #4F46E5);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.35);
+    letter-spacing: 0.01em;
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(99,102,241,0.4);
+}
+
+.submitBtn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.submitBtn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submitIcon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.submitIcon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ── Success ── */
+.successCard {
+    max-width: 500px;
+    margin: 80px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 56px 48px;
+    text-align: center;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    border: 1px solid #E5E7EB;
+}
+
+.successIconWrap {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #059669, #047857);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    box-shadow: 0 8px 24px rgba(5,150,105,0.3);
+}
+
+.successIconWrap svg {
+    width: 32px;
+    height: 32px;
+    stroke: white;
+}
+
+.successCard h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 10px;
+}
+
+.successCard p {
+    color: #6B7280;
+    margin: 0 0 32px;
+    line-height: 1.6;
+}
+
+.resetBtn {
+    padding: 11px 24px;
+    background: #F3F4F6;
+    border: 2px solid #E5E7EB;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.resetBtn:hover {
+    background: #E5E7EB;
+    border-color: #D1D5DB;
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+    .form { padding: 28px 20px; }
+    .radioGrid { grid-template-columns: 1fr; }
+    .featuresGrid { grid-template-columns: 1fr; }
+}

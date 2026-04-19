@@ -1,0 +1,103 @@
+.page {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #F8FAFC;
+}
+
+.content {
+    text-align: center;
+    max-width: 560px;
+}
+
+.errorCode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366F1, #10B981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.zeroWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 14px;
+}
+
+.sub {
+    font-size: 1rem;
+    color: #6B7280;
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.btnPrimary {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #6366F1, #4F46E5);
+    color: white; border: none; border-radius: 10px;
+    font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    box-shadow: 0 4px 14px rgba(99,102,241,0.35);
+    transition: all 0.15s;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99,102,241,0.45);
+}
+
+.btnOutline {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    background: white; border: 2px solid #E5E7EB;
+    border-radius: 10px; font-size: 0.9rem; font-weight: 600;
+    color: #374151; cursor: pointer; font-family: inherit;
+    transition: all 0.15s;
+}
+
+.btnOutline:hover { border-color: #6366F1; color: #6366F1; }
+
+.quickLinks {
+    display: flex; align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; gap: 8px;
+}
+
+.quickLinksLabel {
+    font-size: 0.8rem; color: #9CA3AF; font-weight: 500;
+}
+
+.quickLink {
+    padding: 5px 12px;
+    background: white; border: 1.5px solid #E5E7EB;
+    border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+    color: #6366F1; cursor: pointer; font-family: inherit;
+    transition: all 0.15s;
+}
+
+.quickLink:hover { background: #EEF2FF; border-color: #6366F1; }

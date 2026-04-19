@@ -1,0 +1,384 @@
+/* ── Page header ── */
+.pageHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.pageTitle { font-size: 1.2rem; font-weight: 800; color: #111827; }
+.pageSub   { font-size: 0.8rem; color: #9CA3AF; margin-top: 3px; }
+
+/* ── Butoane ── */
+.btnPrimary {
+    display: flex; align-items: center; gap: 6px;
+    padding: 9px 16px;
+    background: #6366F1; color: white;
+    border: none; border-radius: 8px;
+    font-size: 0.85rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    transition: background 0.15s;
+}
+
+.btnPrimary:hover { background: #4F46E5; }
+
+.btnOutline {
+    padding: 7px 14px;
+    background: none; border: 1.5px solid #E5E7EB;
+    border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+    color: #374151; cursor: pointer; font-family: inherit;
+    transition: all 0.15s;
+}
+
+.btnOutline:hover { border-color: #6366F1; color: #6366F1; }
+
+.btnSm {
+    padding: 5px 10px;
+    border: none; border-radius: 6px;
+    font-size: 0.75rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    transition: background 0.15s;
+}
+
+.btnEdit   { background: #EEF2FF; color: #6366F1; }
+.btnDelete { background: #FEF2F2; color: #EF4444; }
+.btnView   { background: #F0FDF4; color: #10B981; }
+
+/* ── Stats grid ── */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.statCard {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.statIcon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+}
+
+.statValue { font-size: 1.4rem; font-weight: 800; color: #111827; }
+.statLabel { font-size: 0.75rem; color: #9CA3AF; margin-top: 2px; }
+.statTrend { font-size: 0.7rem; font-weight: 600; margin-top: 8px; color: #10B981; }
+
+/* ── Charts ── */
+.chartsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.chartCard {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.chartTitle {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.barRow {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px;
+}
+
+.barLabel { font-size: 0.75rem; color: #6B7280; width: 70px; flex-shrink: 0; }
+
+.barTrack {
+    flex: 1; height: 8px;
+    background: #F3F4F6;
+    border-radius: 10px; overflow: hidden;
+}
+
+.barFill { height: 100%; border-radius: 10px; }
+.barVal  { font-size: 0.7rem; font-weight: 600; color: #374151; width: 60px; text-align: right; }
+
+/* ── Table card ── */
+.tableCard {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.tableHeader {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.tableTitle { font-size: 0.875rem; font-weight: 700; color: #111827; }
+.tableActions { display: flex; gap: 8px; align-items: center; }
+
+.searchInput {
+    padding: 7px 12px;
+    background: #F9FAFB;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #111827;
+    outline: none;
+    width: 200px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.searchInput:focus { border-color: #6366F1; }
+
+table { width: 100%; border-collapse: collapse; }
+
+thead th {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 10px 18px;
+    background: #F9FAFB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+tbody td {
+    padding: 12px 18px;
+    font-size: 0.85rem;
+    color: #374151;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: #FAFAFA; }
+
+.actionBtns { display: flex; gap: 6px; }
+
+/* ── Badges ── */
+.badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 8px; border-radius: 20px;
+    font-size: 0.7rem; font-weight: 700;
+}
+
+.badgeActive    { background: #D1FAE5; color: #065F46; }
+.badgeInactive  { background: #FEE2E2; color: #991B1B; }
+.badgePending   { background: #FEF3C7; color: #92400E; }
+.badgeConfirmed { background: #DBEAFE; color: #1E40AF; }
+.badgeProcessing{ background: #EDE9FE; color: #5B21B6; }
+.badgeShipped   { background: #D1FAE5; color: #065F46; }
+.badgeDelivered { background: #D1FAE5; color: #065F46; }
+.badgeCancelled { background: #FEE2E2; color: #991B1B; }
+
+/* ── Tabs ── */
+.tabs {
+    display: flex; gap: 4px;
+    background: #F3F4F6;
+    border-radius: 8px; padding: 4px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 6px 16px; border-radius: 6px;
+    font-size: 0.8rem; font-weight: 600;
+    color: #6B7280; cursor: pointer;
+    border: none; background: none;
+    font-family: inherit; transition: all 0.15s;
+}
+
+.tabActive {
+    background: white !important;
+    color: #6366F1 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ── Toggle activ/inactiv ── */
+.toggle {
+    width: 40px; height: 22px;
+    border-radius: 11px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s;
+    border: none;
+    flex-shrink: 0;
+}
+
+.toggleOn  { background: #10B981; }
+.toggleOff { background: #D1D5DB; }
+
+.toggleDot {
+    position: absolute;
+    width: 16px; height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 3px;
+    transition: left 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.toggleDotOn  { left: 21px; }
+.toggleDotOff { left: 3px; }
+
+/* ── Dropdown status ── */
+.statusSelect {
+    padding: 5px 10px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.15s;
+}
+
+.statusSelect:focus { border-color: #6366F1; }
+
+/* ══ MODAL ══ */
+.modalOverlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 500;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.modal {
+    background: white;
+    border-radius: 16px;
+    width: 100%; max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(-8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modalHeader {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.modalTitle { font-size: 1rem; font-weight: 800; color: #111827; }
+
+.modalClose {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: #F3F4F6; border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: #6B7280; font-size: 1.2rem;
+    transition: background 0.15s;
+}
+
+.modalClose:hover { background: #E5E7EB; }
+
+.modalBody { padding: 24px; }
+
+.modalFooter {
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 16px 24px;
+    border-top: 1px solid #E5E7EB;
+}
+
+/* ── Form fields în modal ── */
+.formGrid { display: grid; gap: 16px; }
+.formRow  { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+
+.label {
+    font-size: 0.75rem; font-weight: 600;
+    color: #374151;
+}
+
+.input {
+    padding: 9px 12px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #111827;
+    outline: none;
+    font-family: inherit;
+    background: #F9FAFB;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: #6366F1;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.input::placeholder { color: #9CA3AF; }
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.select {
+    padding: 9px 12px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #111827;
+    outline: none;
+    font-family: inherit;
+    background: #F9FAFB;
+    cursor: pointer;
+}
+
+.select:focus { border-color: #6366F1; }
+
+/* Skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Empty state */
+.emptyState {
+    text-align: center; padding: 48px 20px;
+}
+
+.emptyTitle { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.emptySub   { font-size: 0.85rem; color: #6B7280; }
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* ← 4 → 5 */
+    gap: 14px;
+    margin-bottom: 24px;
+}

@@ -944,6 +944,15 @@ export default function Navbar() {
         return () => clearTimeout(t)
     }, [searchTerm])
 
+    const [profile, setProfile] = useState(null)
+
+    useEffect(() => {
+        if (!isLoggedIn) return
+        axiosInstance.get('/api/users/me')
+            .then(res => setProfile(res.data))
+            .catch(console.error)
+    }, [isLoggedIn])
+
     // ── Hover helpers ──
     const makeHoverHandlers = (setFn, ref) => ({
         onMouseEnter: () => { clearTimeout(ref.current); setFn(true) },
@@ -1013,9 +1022,9 @@ export default function Navbar() {
             maximumFractionDigits: 2,
         }).format(p)
 
-    const initials = user
-        ? `${user.firstName?.[0] || ''}${user.lastName?.[0] || ''}`.toUpperCase()
-        : 'U'
+    const initials = profile
+        ? `${profile.firstName?.[0] || ''}${profile.lastName?.[0] || ''}`.toUpperCase()
+        : user?.email?.[0]?.toUpperCase() || 'U'
 
     const cartItemCount = cart?.totalItems || 0
     const cartTotal     = cart?.totalPrice || 0

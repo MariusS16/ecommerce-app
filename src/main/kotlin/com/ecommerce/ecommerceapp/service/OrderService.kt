@@ -11,6 +11,7 @@ import com.ecommerce.ecommerceapp.mapper.OrderMapper
 import com.ecommerce.ecommerceapp.repository.CartItemRepository
 import com.ecommerce.ecommerceapp.repository.CartRepository
 import com.ecommerce.ecommerceapp.repository.OrderRepository
+import com.ecommerce.ecommerceapp.repository.ProductRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.math.BigDecimal
@@ -24,7 +25,8 @@ class OrderService(
     private val cartRepository: CartRepository,
     private val cartItemRepository: CartItemRepository,
     private val orderMapper: OrderMapper,
-    private val emailService: EmailService
+    private val emailService: EmailService,
+    private val productRepository: ProductRepository
 ) {
 
     // CREATE order (checkout from cart)
@@ -37,6 +39,16 @@ class OrderService(
         val cartItems = cartItemRepository.findByCart(cart)
         if (cartItems.isEmpty()) {
             throw IllegalArgumentException("Cart is empty")
+        }
+
+        // verificăm stocul ÎNAINTE să plasăm comanda
+        cartItems.forEach { cartItem ->
+            if (cartItem.product.stock < cartItem.quantity) {
+                throw IllegalArgumentException(
+                    "Stoc insuficient pentru '${cartItem.product.name}'. " +
+                            "Disponibil: ${cartItem.product.stock}, solicitat: ${cartItem.quantity}"
+                )
+            }
         }
 
         // Generate unique order number (e.g., "ORD-2026-00001")
@@ -78,6 +90,15 @@ class OrderService(
 
         savedOrder.items.addAll(orderItems)
         orderRepository.save(savedOrder)
+
+        // scădem stocul pentru fiecare produs comandat
+        cartItems.forEach { cartItem ->
+            val updatedProduct = cartItem.product.copy(
+                stock = cartItem.product.stock - cartItem.quantity,
+                updatedAt = LocalDateTime.now()
+            )
+            productRepository.save(updatedProduct)
+        }
 
         emailService.sendOrderConfirmationEmail(user, savedOrder)
 

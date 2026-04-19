@@ -11,6 +11,11 @@ data class OrderDTO(
     val status: OrderStatus,
     val totalPrice: BigDecimal,
 
+    // User
+    val userFirstName: String?,
+    val userLastName: String?,
+    val userEmail: String?,
+
     // Shipping address
     val shippingAddress: String,
     val shippingCity: String,

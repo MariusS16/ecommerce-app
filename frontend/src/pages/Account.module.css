@@ -1,0 +1,286 @@
+/* ── Stats ── */
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.statCard {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: box-shadow 0.2s;
+}
+
+.statCard:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.statIcon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.statValue { font-size: 1.4rem; font-weight: 800; color: #111827; }
+.statLabel { font-size: 0.75rem; color: #9CA3AF; margin-top: 2px; }
+
+/* ── Card ── */
+.card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cardHeader {
+    padding: 18px 24px;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.cardTitle { font-size: 0.95rem; font-weight: 700; color: #111827; }
+.cardSub   { font-size: 0.75rem; color: #9CA3AF; margin-top: 3px; }
+
+.cardBody { padding: 24px; }
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* ── Formular ── */
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.inputWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #111827;
+    outline: none;
+    font-family: inherit;
+    background: #F9FAFB;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: #6366F1;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.inputDisabled {
+    background: #F3F4F6;
+    color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+.inputError { border-color: #EF4444 !important; }
+.inputError:focus { box-shadow: 0 0 0 3px rgba(239,68,68,0.1) !important; }
+
+.fieldHint  { font-size: 0.7rem; color: #9CA3AF; }
+.fieldError { font-size: 0.75rem; color: #EF4444; font-weight: 500; }
+.fieldSuccess { font-size: 0.75rem; color: #10B981; font-weight: 500; }
+
+/* Buton ochi (show/hide parolă) */
+.eyeBtn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9CA3AF;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+}
+
+.eyeBtn:hover { color: #6366F1; }
+
+/* Input cu buton ochi — padding extra */
+.inputWrap .input { padding-right: 38px; }
+
+/* ── Indicator putere parolă ── */
+.strengthBars {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.strengthBar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.strengthLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.strengthHint {
+    font-weight: 400;
+    color: #9CA3AF;
+    font-size: 0.7rem;
+}
+
+/* ── Mesaje succes/eroare ── */
+.msg {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.msgSuccess {
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+
+.msgError {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+/* ── Butoane ── */
+.btnPrimary {
+    padding: 9px 20px;
+    background: #6366F1; color: white;
+    border: none; border-radius: 8px;
+    font-size: 0.875rem; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    transition: background 0.15s;
+}
+
+.btnPrimary:hover { background: #4F46E5; }
+.btnPrimary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btnSecondary {
+    display: flex; align-items: center; gap: 6px;
+    padding: 9px 16px;
+    background: none;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.875rem; font-weight: 600;
+    color: #374151; cursor: pointer; font-family: inherit;
+    transition: all 0.15s;
+}
+
+.btnSecondary:hover { border-color: #6366F1; color: #6366F1; }
+
+.btnOutline {
+    padding: 9px 16px;
+    background: none;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.875rem; font-weight: 600;
+    color: #374151; cursor: pointer; font-family: inherit;
+    transition: all 0.15s;
+}
+
+.btnOutline:hover { border-color: #D1D5DB; }
+
+/* ── Modal ── */
+.modalOverlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 500; padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.modal {
+    background: white;
+    border-radius: 20px;
+    width: 100%; max-width: 460px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.modalHeader {
+    display: flex; align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px 24px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.modalTitle { font-size: 1rem; font-weight: 800; color: #111827; }
+.modalSub   { font-size: 0.75rem; color: #9CA3AF; margin-top: 3px; }
+
+.modalClose {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: #F3F4F6; border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: #6B7280; flex-shrink: 0;
+    transition: background 0.15s;
+}
+
+.modalClose:hover { background: #E5E7EB; }
+
+.modalBody   { padding: 24px; }
+
+.modalFooter {
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 16px 24px;
+    border-top: 1px solid #E5E7EB;
+    background: #F9FAFB;
+}
+
+/* ── Loading ── */
+.loadingWrap {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 400px;
+}
+
+.spinner {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 3px solid #EEF2FF;
+    border-top: 3px solid #6366F1;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

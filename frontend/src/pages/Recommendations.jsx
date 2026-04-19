@@ -16,7 +16,7 @@ const LOADING_STEPS = [
 ]
 
 const QUICK_CHIPS = [
-    'iPhone 16 Pro', 'Laptop Dell', 'Căști Sony',
+    'iPhone 17 Pro', 'Laptop Dell', 'Căști Sony',
     'Samsung Galaxy', 'Monitor 4K',
 ]
 
@@ -86,6 +86,9 @@ export default function Recommendations() {
             )
             await new Promise(r => setTimeout(r, 2000))
             setResult(res.data)
+
+            const current = parseInt(localStorage.getItem('ai_search_count') || '0')
+            localStorage.setItem('ai_search_count', String(current + 1))
         } catch (err) {
             console.error(err)
             setError(true)

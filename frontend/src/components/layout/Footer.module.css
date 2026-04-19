@@ -1,129 +1,285 @@
+/*.footer {*/
+/*    background-color: #111827;*/
+/*    margin-top: auto;*/
+/*}*/
+
+/*.footerContent {*/
+/*    max-width: 1200px;*/
+/*    margin: 0 auto;*/
+/*    padding: 3rem 1.5rem 1.5rem;*/
+/*}*/
+
+/*!* ── Grid cu 4 coloane ── *!*/
+/*.footerGrid {*/
+/*    display: grid;*/
+/*    grid-template-columns: 2fr 1fr 1fr 1fr;*/
+/*    gap: 2rem;*/
+/*    padding-bottom: 2.5rem;*/
+/*    border-bottom: 1px solid #1F2937;*/
+/*}*/
+
+/*!* ── Coloana brand ── *!*/
+/*.brandCol {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.logo {*/
+/*    font-size: 1.2rem;*/
+/*    font-weight: 700;*/
+/*    margin-bottom: 0.75rem;*/
+/*    cursor: pointer;*/
+/*    width: fit-content;*/
+/*}*/
+
+/*.logoShop {*/
+/*    color: #818CF8;*/
+/*}*/
+
+/*.logoAdvisor {*/
+/*    color: #34D399;*/
+/*}*/
+
+/*.brandDescription {*/
+/*    font-size: 0.875rem;*/
+/*    color: #9CA3AF;*/
+/*    line-height: 1.7;*/
+/*    margin-bottom: 1.25rem;*/
+/*    max-width: 240px;*/
+/*}*/
+
+/*!* ── Social media iconițe ── *!*/
+/*.socialLinks {*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*.socialButton {*/
+/*    width: 34px;*/
+/*    height: 34px;*/
+/*    border-radius: 8px;*/
+/*    background-color: #1F2937;*/
+/*    border: 1px solid #374151;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    cursor: pointer;*/
+/*    color: #9CA3AF;*/
+/*    transition: background-color 0.15s, border-color 0.15s, color 0.15s;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.socialButton:hover {*/
+/*    background-color: #374151;*/
+/*    border-color: #4B5563;*/
+/*    color: #F9FAFB;*/
+/*}*/
+
+/*!* ── Coloane linkuri ── *!*/
+/*.linkCol {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.colTitle {*/
+/*    font-size: 0.75rem;*/
+/*    font-weight: 600;*/
+/*    color: #F9FAFB;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 0.08em;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*.footerLinks {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 8px;*/
+/*}*/
+
+/*.footerLink {*/
+/*    font-size: 0.875rem;*/
+/*    color: #9CA3AF;*/
+/*    cursor: pointer;*/
+/*    background: none;*/
+/*    border: none;*/
+/*    font-family: inherit;*/
+/*    text-align: left;*/
+/*    padding: 0;*/
+/*    transition: color 0.15s;*/
+/*    width: fit-content;*/
+/*}*/
+
+/*.footerLink:hover {*/
+/*    color: #F9FAFB;*/
+/*}*/
+
+/*!* ── Rândul de jos ── *!*/
+/*.footerBottom {*/
+/*    padding-top: 1.5rem;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 0.5rem;*/
+/*}*/
+
+/*.copyright {*/
+/*    font-size: 0.8rem;*/
+/*    color: #6B7280;*/
+/*}*/
+
 .footer {
-    background-color: #111827;
+    background: #111827;
+    color: white;
     margin-top: auto;
 }
 
-.footerContent {
-    max-width: 1200px;
+.inner {
+    max-width: 1380px;
     margin: 0 auto;
-    padding: 3rem 1.5rem 1.5rem;
-}
-
-/* ── Grid cu 4 coloane ── */
-.footerGrid {
+    padding: 56px 40px 40px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 2rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid #1F2937;
+    gap: 48px;
 }
 
-/* ── Coloana brand ── */
-.brandCol {
-    display: flex;
-    flex-direction: column;
-}
+/* ── Brand ── */
+.brandCol {}
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 800;
     cursor: pointer;
-    width: fit-content;
+    margin-bottom: 14px;
+    display: inline-block;
 }
 
-.logoShop {
-    color: #818CF8;
+.logoTrust {
+    background: linear-gradient(135deg, #818CF8, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.logoAdvisor {
-    color: #34D399;
+.logoCart {
+    color: white;
 }
 
-.brandDescription {
-    font-size: 0.875rem;
+.brandDesc {
+    font-size: 0.85rem;
     color: #9CA3AF;
     line-height: 1.7;
-    margin-bottom: 1.25rem;
-    max-width: 240px;
+    margin-bottom: 16px;
+    max-width: 280px;
 }
 
-/* ── Social media iconițe ── */
+.aiBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.3);
+    color: #818CF8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+/* Social */
 .socialLinks {
     display: flex;
     gap: 10px;
+    margin-bottom: 16px;
 }
 
-.socialButton {
-    width: 34px;
-    height: 34px;
+.socialBtn {
+    width: 36px; height: 36px;
     border-radius: 8px;
-    background-color: #1F2937;
-    border: 1px solid #374151;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
     color: #9CA3AF;
-    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
     text-decoration: none;
+    transition: all 0.15s;
 }
 
-.socialButton:hover {
-    background-color: #374151;
-    border-color: #4B5563;
-    color: #F9FAFB;
+.socialBtn:hover {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border-color: rgba(255,255,255,0.2);
 }
 
-/* ── Coloane linkuri ── */
-.linkCol {
-    display: flex;
-    flex-direction: column;
+.uniInfo {
+    font-size: 0.72rem;
+    color: #4B5563;
 }
+
+/* ── Link columns ── */
+.linkCol {}
 
 .colTitle {
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 700;
     color: #F9FAFB;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
-.footerLinks {
+.linkList {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .footerLink {
-    font-size: 0.875rem;
-    color: #9CA3AF;
-    cursor: pointer;
     background: none;
     border: none;
+    color: #9CA3AF;
+    font-size: 0.875rem;
+    cursor: pointer;
     font-family: inherit;
-    text-align: left;
     padding: 0;
+    text-align: left;
     transition: color 0.15s;
-    width: fit-content;
 }
 
-.footerLink:hover {
-    color: #F9FAFB;
+.footerLink:hover { color: white; }
+
+/* ── Bottom ── */
+.bottomBar {
+    border-top: 1px solid #1F2937;
+    padding: 16px 40px;
 }
 
-/* ── Rândul de jos ── */
-.footerBottom {
-    padding-top: 1.5rem;
+.bottomInner {
+    max-width: 1380px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.copyright {
+    justify-content: space-between;
     font-size: 0.8rem;
     color: #6B7280;
 }
+
+.bottomLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.bottomLink {
+    background: none;
+    border: none;
+    color: #6B7280;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    transition: color 0.15s;
+}
+
+.bottomLink:hover { color: #9CA3AF; }
